@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #f3ede3;
+  --color-foreground: #1a1a1a;
+  --color-preto: #1a1a1a;
+  --color-off-white: #f3ede3;
+  --color-chumbo: #4a4a48;
+  --color-chocolate: #4a3527;
+  --color-marinho: #1f2a3c;
+  --color-telha: #b5654a;
+  --color-linha: rgba(26, 26, 26, 0.12);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-off-white);
+  color: var(--color-preto);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Eyebrow / overline */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-chumbo);
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease-brand),
+    transform 0.9s var(--ease-brand);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+::selection {
+  background: var(--color-preto);
+  color: var(--color-off-white);
+}
