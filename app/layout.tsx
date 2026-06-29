@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import "./globals.css"
 import { CartProvider } from "@/components/cart/cart-context"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { getCart } from "@/lib/shopify"
 import { cookies } from "next/headers"
 
@@ -44,7 +46,11 @@ export default async function RootLayout({
   return (
     <html lang="pt-BR" className={`${poppins.variable} bg-background`}>
       <body className="font-sans antialiased">
-        <CartProvider initialCart={cart}>{children}</CartProvider>
+        <CartProvider initialCart={cart ?? null}>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   )
