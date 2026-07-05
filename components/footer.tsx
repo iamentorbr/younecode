@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Instagram } from "lucide-react"
 import { Logo } from "./logo"
 
 export function Footer() {
@@ -10,6 +11,16 @@ export function Footer() {
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Engenharia do Vestir®. Sistemas modulares que organizam o seu dia, da manhã à presença.
           </p>
+          <Link
+            href="https://www.instagram.com/younecode/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram da YOUNE CODE"
+            className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Instagram className="h-4 w-4" aria-hidden="true" />
+            <span>@younecode</span>
+          </Link>
         </div>
 
         <div>
